@@ -1,4 +1,0 @@
-from typing import Dict , List , Optional , Union , Any
-
-sources : Union [str , Path , List [ Union [str , Path ]]] ,
-doc_types : Optional [ List [ DocumentType ]] = None ,
