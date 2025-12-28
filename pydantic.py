@@ -1,4 +1,4 @@
-from typing import Dict , List , Optional , Union , Any, Literal
+from typing import Dict , List , Optional , Union , Any, Literal, TypedDict
 
 sources : Union [str , Path , List [ Union [str , Path ]]] ,
 doc_types : Optional [ List [ DocumentType ]] = None ,
@@ -7,6 +7,11 @@ doc_types : Optional [ List [ DocumentType ]] = None ,
 class SentimentSchema(BaseModel):
     sentiment: Literal["positive", "negative"] = Field(description='Sentiment of the review')
 
+class ReviewState(TypedDict):
+    review: str
+    sentiment: Literal["positive", "negative"]
+    diagnosis: dict
+    response: str
 
 from pydantic import BaseModel,Field, field_validator, model_validator, computed_field
 from pydantic import AnyUrl,EmailStr
