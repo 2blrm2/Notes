@@ -1,9 +1,11 @@
-from typing import Dict , List , Optional , Union , Any
+from typing import Dict , List , Optional , Union , Any, Literal
 
 sources : Union [str , Path , List [ Union [str , Path ]]] ,
 doc_types : Optional [ List [ DocumentType ]] = None ,
 
 
+class SentimentSchema(BaseModel):
+    sentiment: Literal["positive", "negative"] = Field(description='Sentiment of the review')
 
 
 from pydantic import BaseModel,Field, field_validator, model_validator, computed_field
