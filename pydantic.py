@@ -7,9 +7,6 @@ doc_types: Optional[List[DocumentType]] = None
 
 config: Optional[Dict[str, Any]] = None
 
-
-## new 29/12
-
 #######################################################################################################
 from pydantic import BaseModel, Field, field_validator, model_validator, computed_field
 from pydantic import AnyUrl, EmailStr
